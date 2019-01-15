@@ -32,8 +32,8 @@ public class PageAccueilServlet extends HttpServlet {
 //		count++;
 //		response.getWriter().append("\nCompteur : "+ count);
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-//		response.sendRedirect("accueil.jsp");
-		this.getServletContext().getRequestDispatcher("accueil.jsp" ).include(request, response);
+		response.sendRedirect("accueil.jsp");
+//		this.getServletContext().getRequestDispatcher("accueil.jsp" ).include(request, response);
 
 	}
 

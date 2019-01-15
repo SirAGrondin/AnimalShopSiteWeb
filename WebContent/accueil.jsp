@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Le meilleur site du monde</title>
+<title>Animal Shop : Le lieu pour réaliser vos rêves</title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link rel="stylesheet" href="Accueil.css">
 </head>
 
 <body>
 	<header>
-		<h1>Bienvenue sur le meilleur site du monde</h1>
+		<h1>Animal Shop : Le lieu pour réaliser vos rêves</h1>
 		
 		<div id="image">
 		<img src="http://www.w3sh.com/wordpress/wp-content/uploads/2011/05/animal-star-wars-sabre-fights-12.jpg" alt="écureuil jedi">
