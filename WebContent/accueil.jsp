@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Page d'accueil</title>
 </head>
 <body>
+
+<i> Date : <%=new java.util.Date().toString()%>
+	</i>
+<%
+	new int count=0;
+	
+%>
 
 </body>
 </html>
