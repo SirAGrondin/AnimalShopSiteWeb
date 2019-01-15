@@ -10,10 +10,6 @@
 
 <i> Date : <%=new java.util.Date().toString()%>
 	</i>
-<%
-	new int count=0;
-	
-%>
 
 </body>
 </html>

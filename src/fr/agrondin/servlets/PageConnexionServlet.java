@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PageConnexionServlet
  */
-@WebServlet("/Connexion")
+@WebServlet("/connexion")
 public class PageConnexionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,8 +26,8 @@ public class PageConnexionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		response.sendRedirect("connexion.jsp");
-		this.getServletContext().getRequestDispatcher("connexion.jsp" ).include(request, response);
+		response.sendRedirect("connexion.jsp");
+//		this.getServletContext().getRequestDispatcher("connexion.jsp" ).include(request, response);
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
