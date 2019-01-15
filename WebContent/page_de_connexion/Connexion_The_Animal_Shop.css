@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    padding: 0%;
+    font-family: 'Slabo 27px', serif;
+}
+
+header.top{
+    background: #D19275;
+    width: 100%;
+    padding: 30px 0px;
+}
+
+header.top .titre{
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header.top .titre h1{
+    font-size: 35px;
+    color: #19191a;
+    font-weight: 700;
+}
+
+header.top .titre h2{
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.formulaire{
+    background: #FFF8DC;
+    margin: 0;
+    padding: 50px 0px 40px 0px;
+    width: 100%;
+}
+
+form{
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+form .container-col{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+fieldset{
+    border: none;
+}
+
+input, textarea{
+    width: 96%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    color: black;
+    font-size: 14px;
+}
+
+form .container-col fieldset p{
+    min-width: 200px;
+}
+
+form .container-col fieldset{
+    flex: 1;
+}
+
+form .container-col fieldset.submit{
+    flex: 2;
+}
+
+form label{
+    display:block;
+    padding: 0;
+    text-align: left;
+}
+
+form textarea{
+    height: 220px;
+    resize: none;
+}
+
+fieldset p{
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #19191a;
+    padding-bottom: 0px;
+}
+
+form .submit{
+    text-align: right;
+}
+
+.submit input{
+    background: transparent;
+    border: 1px solid #111;
+    color: #111;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 20%;
+}
+
+.submit input:hover{
+    background: #D19275;
+    transition: all 0.1s ease 0.1s;
+    border: 1px solid #D19275;
+    color: white;
+    cursor: pointer;
+}
+
+footer{
+    background:#111111;
+    margin: 0;
+    padding: 10px 0;
+}
+
+footer h3, footer h3 a{
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 1150px;
+    text-align: center;
+    width: 100%;
+}
+
+footer h3 a{
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease 0.1s;
+}
+
+footer h3 a:hover{
+    color: #fff;
+}
+
+@media screen and (max-width: 480px){
+    .submit input {
+        width: 100%;
+    }
+}
