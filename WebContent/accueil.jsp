@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +27,13 @@
 		
 		<div id="heure">
 		<%= new java.util.Date().toString().substring(11, 16)%>
+		</div>
+		
+		<div id="compteur">
+		<%! int compteur=0;%>
+		<% compteur ++;%>
+		Vous êtes le visiteur n°<%=compteur %> .
+
 		</div>
 	</header>
 </body>

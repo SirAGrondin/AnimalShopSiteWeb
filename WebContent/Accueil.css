@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 body{
-    background-color: lightblue;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7uzU_ShN9pffQ5L2YYcBqiOCZsKDyzMVbcgzSxaHZzUzjwxIdYQ");a
     width: 100%;
     padding: 0;
     margin: 0;
@@ -61,4 +61,19 @@ header a:active{
 	padding: 3px;
 	display: block;
 	width: 10%;
+}
+
+#compteur{
+	background: black;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+	border-color: white;
+	border-width: 2px;
+	border-style: solid;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 20px;
+	display: block;
+	width: 10%;}
 }
