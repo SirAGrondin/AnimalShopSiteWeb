@@ -12,10 +12,10 @@
 
 <body>
 	<header>
-		<h1 id="titre">Animal Shop : Le lieu pour réaliser vos rêves</h1>
+		<h1 id="titre">Animal Shop </h1>
 
 		<div id="image">
-			<img src="http://www.w3sh.com/wordpress/wp-content/uploads/2011/05/animal-star-wars-sabre-fights-12.jpg" alt="ecureuil jedi">
+			<img src="https://beechmontky.files.wordpress.com/2014/06/animalmeeting.jpg" alt="desktop-animal">
 		</div>
 
 		<div class="haut_droite">
@@ -42,7 +42,7 @@
 				</div>
 					<div class="bloc_texte">
 						<h1>
-							Les seniors peuvent-ils apprécier la série ?
+							L'animal du jour : Mira (chaton).
 						</h1>
 						<p class="texte">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -67,7 +67,7 @@
 				</div>
 					<div class="bloc_texte">
 						<h1>
-							Comment améliorer notre lieu de travail (d'après le Muppet Show) ?
+							L'animal start du mois : Flash (toutou).
 						</h1>
 						<p class="texte">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -100,7 +100,7 @@
 							<div id="compteur">
 							<%! int compteur=0;%>
 							<% compteur ++;%>
-							Vous �tes le visiteur n�<%=compteur %> .
+							Vous etes le visiteur n.<%=compteur %> .
 							</div>
 						</div>
 					<div class="bas">   

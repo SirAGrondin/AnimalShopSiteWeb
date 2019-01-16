@@ -1,11 +1,8 @@
 @charset "ISO-8859-1";
 
 body{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7uzU_ShN9pffQ5L2YYcBqiOCZsKDyzMVbcgzSxaHZzUzjwxIdYQ");a
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    background : white;
+	box-shadow: 1px 1px green;
 }
 
 h1{
