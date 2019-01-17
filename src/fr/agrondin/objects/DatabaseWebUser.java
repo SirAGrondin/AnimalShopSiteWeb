@@ -2,6 +2,7 @@ package fr.agrondin.objects;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public final class DatabaseWebUser {
 
@@ -20,6 +21,24 @@ public final class DatabaseWebUser {
 			accounts.add(newUser);
 			return true;
 		}
+		return false;
+	}
+	
+	public static final boolean update(final String pseudo, final String newEmail, final String newPassword) {
+		WebUser updated = new WebUser();
+		updated = selectByPseudoOrEmail(pseudo);
+		updated.setEmail(newEmail);
+		updated.setPassword(newPassword);
+		Iterator<WebUser> webUserIterator = accounts.iterator();
+		while(webUserIterator.hasNext()) {
+			WebUser user = webUserIterator.next();
+				if (user.getPseudo().equals(pseudo)) {
+					user.setEmail(newEmail);
+					user.setPassword(newPassword);
+					return true;
+				}
+		}
+		
 		return false;
 	}
 

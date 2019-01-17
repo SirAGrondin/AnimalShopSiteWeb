@@ -3,8 +3,9 @@ package fr.agrondin.objects;
 public enum LoginPostName {
 	USERNAME("username"),
 	PASSWORD("password"),
-	STAYCO("stayco");
-
+	STAYCO("stayco"),
+	EMAIL("email");
+	
 	private String name;
 	
 	public final String getName() {
