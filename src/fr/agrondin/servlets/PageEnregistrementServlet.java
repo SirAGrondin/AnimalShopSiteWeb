@@ -54,13 +54,14 @@ public class PageEnregistrementServlet extends HttpServlet {
 					throws ServletException, IOException {
 				
 				// Préciser les champs requis envoyés par le formulaire
-				String[] requiredNames = { LoginPostName.USERNAME.getName(), LoginPostName.PASSWORD.getName(),
+				String[] requiredNames = { LoginPostName.USERNAME.getName(),LoginPostName.EMAIL.getName(),LoginPostName.PASSWORD.getName(),
 						LoginPostName.STAYCO.getName() };
-				String username = "", password = "";
+				String username = "",email="", password = "";
 
 				// Vérifier la présence de ces champs requis dans la requête
 				if (PostNamesChecker.areNamesFoundInPostRequest(request, requiredNames)) {
 					username = request.getParameter(LoginPostName.USERNAME.getName());
+					email = request.getParameter(LoginPostName.EMAIL.getName());
 					password = request.getParameter(LoginPostName.PASSWORD.getName());
 
 					// Vérifier l'existance du potentiel utilisateur
