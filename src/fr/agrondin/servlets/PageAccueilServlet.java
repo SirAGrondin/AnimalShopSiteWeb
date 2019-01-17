@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PageAccueilServlet
  */
-@WebServlet("/accueil")
+@WebServlet("/")
 public class PageAccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -29,11 +29,9 @@ public class PageAccueilServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		count++;
-//		response.getWriter().append("\nCompteur : "+ count);
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("accueil.jsp");
-//		this.getServletContext().getRequestDispatcher("accueil.jsp" ).include(request, response);
+		this.getServletContext().getRequestDispatcher("/Pages/Accueil/").forward(request, response);
+//		response.sendRedirect("/AnimalShopSiteWeb/Pages/Accueil");
+		
 
 	}
 
@@ -41,7 +39,6 @@ public class PageAccueilServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

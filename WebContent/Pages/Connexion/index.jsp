@@ -1,58 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="cat_icon.ico">
-    <title>Connexion</title>
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-    <link rel="stylesheet" href="Connexion_The_Animal_Shop.css">
+<meta charset="utf-8">
+<link rel="icon" href="cat_icon.ico">
+<title>Connexion</title>
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px"
+	rel="stylesheet">
+<link rel="stylesheet" href="Connexion_The_Animal_Shop.css">
 </head>
 
 <body>
-    <header class="top">
-        <div class="titre">
-            <h1>The animal Shop</h1>
-            <h2>Page de connexion
-            </h2>
-        </div>
-    </header>
 
-    <section class="formulaire">
-        <form method="post" action="envoi.php">
-            <div class="container-col">
-                <fieldset>
-                   
-                    <p>
-                        <label for="email">E-mail :</label>
-                        <input type="email" id="email" name="email" placeholder="e-mail" required="required"/>
-                        <span id="missingEmail"></span>
-                    </p>
+	<header class="top">
+		<div class="titre">
+			<h1>The animal Shop</h1>
+			<h2>Page de connexion</h2>
+		</div>
+	</header>
 
-                    <p>
-                        <label for="mdp">Mot de passe :</label>
-                        <input type="text" id="mdp" name="mdp" placeholder="*********" required="required" />
-                        <span id="missingNom"></span>
-                    </p>
+	<section class="formulaire">
+		<form method="post" action="envoi.php">
 
-                </fieldset>
-            </div>
+			<div class="container-col">
+				<fieldset>
+					<p>
+						<label for="email">E-mail :</label> <input type="email"
+							id="email-0" name="email" class="Email"
+							placeholder="Votre adresse e-mail" required="required"
+							tabindex="1" autofocus="autofocus" />
+						<!-- <span id="missingEmail"></span> -->
+					</p>
 
-            <fieldset class="submit">
-                <p>
-                    <input type="submit" value="Connexion" id="bouton_envoi" />
-                </p>
-            </fieldset>
-        </form>
-    </section>
+					<p>
+						<label for="password-0">Mot de passe :</label> <input
+							type="password" name="password" id="password-0" class="Password"
+							minlength="3" maxlength="250" title="Min/Max: 3/250 caractères."
+							placeholder="Votre mot de passe" required="required" tabindex="1">
+						<!-- <span id="missingNom"></span> -->
+					</p>
+				</fieldset>
+			</div>
 
-    <footer>
-        <!-- copyright = alt+0169-->
-        <h3>Alexandre, Clément et Andréa // 2019 © <a href="#">Formation</a></h3>
-    </footer>
+			<fieldset class="submit">
+				<p>
+					<input type="submit" value="Connexion" id="bouton_envoi" />
+				</p>
+			</fieldset>
+		</form>
+	</section>
 
-    <script>
+	<footer>
+		<!-- copyright = alt+0169-->
+		<h3>
+			Alexandre, Clément et Andréa // 2019 © <a href="#">Formation</a>
+		</h3>
+	</footer>
+
+	<!-- <script>
         var formValid = document.getElementById("bouton_envoi");
 
         var userEmail = document.getElementById("email");
@@ -121,8 +127,8 @@
                 missingNom.textContent = "";
                 missingNom.style = "none";
             }
-        }
+        } -->
 
-    </script>
+	</script>
 </body>
 </html>
