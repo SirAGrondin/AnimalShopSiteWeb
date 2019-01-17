@@ -43,7 +43,7 @@ public class PageEnregistrementServlet extends HttpServlet {
 					// Si une session existe, on redirige sur une autre page.
 				}
 				// Si non, on affiche la page de formulaire/connexion.
-				this.getServletContext().getRequestDispatcher("/Pages/Enregistrement/").forward(request, response);
+				this.getServletContext().getRequestDispatcher("/Pages/Connexion/").forward(request, response);
 			}
 
 			/**
