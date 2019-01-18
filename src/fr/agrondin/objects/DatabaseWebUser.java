@@ -19,7 +19,7 @@ public final class DatabaseWebUser {
 			newUser.setPseudo(pseudo);
 			newUser.setEmail(email);
 			newUser.setPassword(password);
-			
+			newUser.setRole(Role.USER);
 			accounts.add(newUser);
 			return true;
 		}
