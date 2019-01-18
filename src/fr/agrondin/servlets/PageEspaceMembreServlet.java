@@ -38,7 +38,7 @@ public class PageEspaceMembreServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		// si il n'y a pas de session, on redirige vers la page de connexion
-		if (session.getAttribute(LoginPostName.EMAIL.getName()) == null) {
+		if (session == null || session.getAttribute(LoginPostName.EMAIL.getName()) == null) {
 			response.sendRedirect("/AnimalShopSiteWeb/Connexion");
 		}
 		
@@ -59,19 +59,22 @@ public class PageEspaceMembreServlet extends HttpServlet {
 		
 		// Préciser les champs requis envoyés par le formulaire
 		String[] requiredNames = { LoginPostName.EMAIL.getName(),LoginPostName.PASSWORD.getName() };
-		String username = (String) session.getAttribute(LoginPostName.USERNAME.getName()), newEmail="", newPassword = "";
+		String username = (String) session.getAttribute(LoginPostName.USERNAME.getName());
+		String newEmail="";
+		String newPassword = "";
 		
+		
+		System.out.println(username);
 		// Vérifier la présence de ces champs requis dans la requête
 		if (PostNamesChecker.areNamesFoundInPostRequest(request, requiredNames)) {
 			newEmail = request.getParameter(LoginPostName.EMAIL.getName());
 			newPassword = request.getParameter(LoginPostName.PASSWORD.getName());
 			// Opérer les modifications
 			DatabaseWebUser.update(username, newEmail, newPassword);
-			System.out.println(username);
-			response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
 			// Prévenir utilisateur que la modif a été faite
 			this.updateMessage = "La modification de vos informations a bien été faite. Hourra.";
 			request.setAttribute("updateMessage", this.updateMessage);
+//			response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
 			doGet(request, response);		
 		}
 

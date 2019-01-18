@@ -14,7 +14,7 @@
 
                 <h2>Changer mes informations</h2>
 
-                <form method="POST" action="EspaceMembre">
+                <form method="POST" action="/AnimalShopSiteWeb/EspaceMembre">
 
                     <!-- Nom d'utilisateur -->
                     <fieldset>

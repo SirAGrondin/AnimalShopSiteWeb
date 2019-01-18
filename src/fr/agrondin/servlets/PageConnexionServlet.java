@@ -71,6 +71,8 @@ public class PageConnexionServlet extends HttpServlet {
 							HttpSession session = request.getSession(true);
 							session.setAttribute(LoginPostName.EMAIL.getName(), email);
 							session.setAttribute(LoginPostName.PASSWORD.getName(), password);
+							session.setAttribute(LoginPostName.USERNAME.getName(), user.getPseudo());
+							session.setAttribute(LoginPostName.ROLE.getName(), user.getRole());
 							response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
 						} else {
 							this.loginErrorMessage = "Le mot de passe est incorrect.";

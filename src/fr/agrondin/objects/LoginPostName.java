@@ -4,7 +4,8 @@ public enum LoginPostName {
 	USERNAME("username"),
 	PASSWORD("password"),
 	EMAIL("email"),
-	STAYCO("stayco");
+	STAYCO("stayco"),
+	ROLE("role");
 	private String name;
 	
 	public final String getName() {
