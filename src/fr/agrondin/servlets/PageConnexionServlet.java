@@ -36,13 +36,17 @@ public class PageConnexionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if (session.getAttribute(LoginPostName.EMAIL.getName()) != null) {
-			// Si une session existe, on redirige sur une autre page.
-			response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
+		if (session != null) {
+			if (session.getAttribute(LoginPostName.EMAIL.getName()) != null) {
+				// Si une session existe, on redirige sur une autre page.
+				response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
+			} else {
+				// Sinon, on affiche la page d'enregistrement.
+				request.setAttribute("errorLogin", this.loginErrorMessage);
+				this.getServletContext().getRequestDispatcher("/Pages/Connexion/").forward(request, response);
+			}
 		} else {
-			// Sinon, on affiche la page d'enregistrement.
-			request.setAttribute("errorLogin", this.loginErrorMessage);
-			this.getServletContext().getRequestDispatcher("/Pages/Connexion/").forward(request, response);
+			response.sendRedirect("/AnimalShopSiteWeb");
 		}
 	}
 

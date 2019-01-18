@@ -55,7 +55,7 @@ public class PageEspaceMembreServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// Récupérer la session
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		
 		// Préciser les champs requis envoyés par le formulaire
 		String[] requiredNames = { LoginPostName.EMAIL.getName(),LoginPostName.PASSWORD.getName() };

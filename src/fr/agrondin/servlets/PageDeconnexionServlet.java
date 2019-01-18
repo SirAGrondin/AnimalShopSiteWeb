@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class PageDeconnexionServlet
  */
-@WebServlet("/PageDeconnexionServlet")
+@WebServlet("/Deconnexion")
 public class PageDeconnexionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,8 +27,9 @@ public class PageDeconnexionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		session.invalidate();
+		response.sendRedirect("/AnimalShopSiteWeb/Connexion");
 	}
 
 	/**
