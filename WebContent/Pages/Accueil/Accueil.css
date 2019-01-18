@@ -33,7 +33,7 @@ header a {
 }
 
 header a:hover{
-	color: darkgreen;
+	color: red;
 	text-decoration: underline;
 }
 
