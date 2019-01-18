@@ -68,8 +68,7 @@ public class PageEspaceMembreServlet extends HttpServlet {
 			newEmail = request.getParameter(LoginPostName.EMAIL.getName());
 			newPassword = request.getParameter(LoginPostName.PASSWORD.getName());
 			// Opérer les modifications
-			System.out.println(DatabaseWebUser.update(username, newEmail, newPassword));
-			System.out.println(username);
+			DatabaseWebUser.update(username, newEmail, newPassword);
 			// Prévenir utilisateur que la modif a été faite
 			this.updateMessage = "La modification de vos informations a bien été faite. Hourra.";
 			request.setAttribute("updateMessage", this.updateMessage);

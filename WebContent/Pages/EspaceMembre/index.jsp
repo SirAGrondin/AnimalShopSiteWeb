@@ -19,9 +19,13 @@
 
 	<form method="POST" action="/AnimalShopSiteWeb/EspaceMembre">
 
+		<!-- Nom d'utilisateur -->
+		<fieldset>
+		<p>Votre nom d'utilisateur : <%= session.getAttribute(LoginPostName.USERNAME.getName()) %></p>
+		</fieldset>
+		
 		<!-- Email -->
 		<fieldset>
-				<%= session.getAttribute(LoginPostName.EMAIL.getName()) %>
 				<label for="email-0">Nouvel Email</label> <input type="email"
 				name="email" class="email" id="email-0" title="E-mail"
 				placeholder="Nouvel E-mail" required="required" tabindex="1"
@@ -30,9 +34,8 @@
 
 		<!-- Mot de passe -->
 		<fieldset>
-			<%= session.getAttribute(LoginPostName.PASSWORD.getName()) %>
 			<label for="password-0">Nouveau mot de passe</label> <input
-				type="password" name="password" class="password" id="password-0"
+				type="text" name="password" class="password" id="password-0"
 				minlength="8" maxlength="250" title="Mot de passe"
 				placeholder="Nouveau mot de passe" required="required" tabindex="1">
 		</fieldset>
