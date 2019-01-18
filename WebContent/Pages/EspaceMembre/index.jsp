@@ -16,14 +16,20 @@
 
                     <!-- Nom d'utilisateur -->
                     <fieldset>
-                        <label for="new_username-0">Nouveau nom d'utilisateur</label>
-                        <input type="text" name="new_username" class="user" id="new_username-0" minlength="3" maxlength="30" pattern="^[A-Z][a-z ]{2,29}$" title="Nom d'utilisateur" placeholder="Nouveau nom d'utilisateur" required="required" tabindex="1" autofocus="autofocus">
+                        <label for="username-0">Nom d'utilisateur</label>
+                        <input type="text" name="username" class="user" id="username-0" minlength="3" maxlength="30" pattern="^[A-Z][a-z ]{2,29}$" title="Nom d'utilisateur" placeholder="Nouveau nom d'utilisateur" required="required" tabindex="1" autofocus="autofocus">
+                    </fieldset>
+                    
+                    <!-- Email -->
+                    <fieldset>
+                        <label for="username-0">Nouveau nom d'utilisateur</label>
+                        <input type="text" name="username" class="user" id="username-0" minlength="3" maxlength="30" pattern="^[A-Z][a-z ]{2,29}$" title="Nom d'utilisateur" placeholder="Nouveau nom d'utilisateur" required="required" tabindex="1" autofocus="autofocus">
                     </fieldset>
 
                     <!-- Mot de passe -->
                     <fieldset>
                         <label for="password-0">Nouveau mot de passe</label>
-                        <input type="password" name="new_password" class="password" id="new_password-0" minlength="8" maxlength="250" title="Mot de passe" placeholder="Nouveau mot de passe" required="required" tabindex="1">
+                        <input type="password" name="password" class="password" id="password-0" minlength="8" maxlength="250" title="Mot de passe" placeholder="Nouveau mot de passe" required="required" tabindex="1">
                     </fieldset>
                     
                     <!-- Changer les informations -->

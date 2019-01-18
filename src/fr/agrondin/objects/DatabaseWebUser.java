@@ -26,9 +26,6 @@ public final class DatabaseWebUser {
 	
 	public static final boolean update(final String pseudo, final String newEmail, final String newPassword) {
 		WebUser updated = new WebUser();
-		updated = selectByPseudoOrEmail(pseudo);
-		updated.setEmail(newEmail);
-		updated.setPassword(newPassword);
 		Iterator<WebUser> webUserIterator = accounts.iterator();
 		while(webUserIterator.hasNext()) {
 			WebUser user = webUserIterator.next();
