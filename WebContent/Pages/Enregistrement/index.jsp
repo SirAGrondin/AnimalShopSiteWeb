@@ -1,85 +1,73 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<style>
+<!-- <style>
 <%@include file="styleEnregistrement.jsp" %>
-</style> 
+</style>  -->
 <title>Inscription</title>
 </head>
 
 <body>
-    <header class="top">
-        <div class="titre">
-            <h1>Page d'enregistrement</h1>
+	<header class="top">
+		<div class="titre">
+			<h1>Page d'enregistrement</h1>
 
-        </div>
-    </header>
-<section class ="formulaire">
-    <form>
-        <div class="container-col">
-            <fieldset>
-                    
-                <p>
-                    <label for="usernam-0">Pseudo :</label>
-                    <input type="text" id="username-0" 
-                    name="username"
-                    placeholder="Pseudonyme"
-                    pattern="^[a-zA-Z ]+$"
-                    required="required" />
-                    <span id="missingNom"></span>
-                </p>
-              
-                <p>
-                    <label for="email">E-mail :</label>
-                    <input type="email" 
-                    id="email" 
-                    name="email"  
-                    placeholder="utilisateur@mail.com"
-                    pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$"
-                    required="required"/> 
-                    <span id="missingEmail"></span>
-                </p>
-                
-                <p>
-                    <label for="password-0">Mot de Passe :</label>
-                    <input type="password" 
-                    id="password-0" 
-                    name="password"  
-                    placeholder="Mot de Passe (4 carac. min)"
-                    pattern=" ^[a-zA-Z0-9._-]{4,}+$" 
-                    required="required"/>
-                    <span id="missingPassword"></span> 
-                </p>
-               
-                 <p>
-                    <label for="password-1">Confirmer Mot de Passe :</label>
-                    <input type="password" 
-                    id="password-1" 
-                    name="password"  
-                    placeholder="Mot de Passe (4 carac. min)"
-                    required="required"
-                     /> 
-                    <span id="confirmationpassword"></span>
-                </p>
-                <p id="error"><%= request.getAttribute("errorlogin") %></p>
-            </fieldset>
+		</div>
+	</header>
+	<section class="formulaire">
+		<form method= "POST" action ="Enregistrement">
+			<div class="container-col">
+				<fieldset>
 
-          
-    <fieldset class ="submit">
-        <label>
-            <button type ="submit" value="Inscription" id="bouton_envoi"/>Inscription
-        </label>
-    </fieldset>
-    </form>
-</section>
-<footer>
-    <h3><a href="/AnimalShopSiteWeb/">Animal Shop</a></h3>
-</footer>
+					<p>
+						<label for="usernam-0">Pseudo :</label> <input type="text"
+							id="username-0" name="username" placeholder="Pseudonyme"
+							pattern="^[a-zA-Z ]+$" required="required" /> <span
+							id="missingNom"></span>
+					</p>
 
-<script>
+					<p>
+						<label for="email">E-mail :</label> <input type="email" id="email"
+							name="email" placeholder="utilisateur@mail.com"
+							pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$"
+							required="required" /> <span id="missingEmail"></span>
+					</p>
+
+					<p>
+						<label for="password-0">Mot de Passe :</label> <input
+							type="password" id="password-0" name="password"
+							placeholder="Mot de Passe (4 carac. min)"
+							pattern=" ^[a-zA-Z0-9._-]{4,}+$" required="required" /> <span
+							id="missingPassword"></span>
+					</p>
+
+					<p>
+						<label for="password-1">Confirmer Mot de Passe :</label> <input
+							type="password" id="password-1" name="passwordbis"
+							placeholder="Mot de Passe (4 carac. min)" required="required" />
+						<span id="confirmationpassword"></span>
+					</p>
+					<p id="error"><%= request.getAttribute("errorLogin") %></p>
+				</fieldset>
+
+
+				<fieldset class="submit">
+					<label>
+						<button type="submit" value="Inscription" id="bouton_envoi" />Inscription
+					</label>
+				</fieldset>
+		</form>
+	</section>
+	<footer>
+		<h3>
+			<a href="/AnimalShopSiteWeb/">Animal Shop</a>
+		</h3>
+	</footer>
+
+	<!-- <script>
     var formValid = document.getElementById("bouton_envoi");
     
     var nom = document.getElementById("nom");
@@ -198,6 +186,6 @@
             passwordconfirmation.style='none';
         }
     }
-</script>
+</script> -->
 </body>
 </html>
