@@ -19,7 +19,7 @@ import fr.agrondin.objects.WebUser;
 @WebServlet("/Enregistrement")
 public class PageEnregistrementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String loginErrorMessage="";
+	private String loginErrorMessage=" ";
 
        
     /**

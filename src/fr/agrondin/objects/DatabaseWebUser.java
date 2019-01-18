@@ -10,7 +10,6 @@ public final class DatabaseWebUser {
 
 			Arrays.asList(new WebUser("Administrateur", "admin@localhost.fr", "Admdp", Role.ADMIN)));
 
-
 	public static final boolean register(final String pseudo, final String email, final String password) {
 		
 		if (!exists(pseudo, email)) {

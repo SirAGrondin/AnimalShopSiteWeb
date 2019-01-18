@@ -26,26 +26,43 @@
                     <p id="error"><%= request.getAttribute("errorlogin") %></p>
                 <p>
                     <label for="usernam-0">Pseudo :</label>
-                    <input type="text" id="username-0" name="username"
-                    placeholder="Pseudonyme" />
+                    <input type="text" id="username-0" 
+                    name="username"
+                    placeholder="Pseudonyme"
+                    required="required"
+                    pattern="^[a-zA-Z ]+$" />
                     <span id="missingNom"></span>
                 </p>
               
                 <p>
                     <label for="email">E-mail :</label>
-                    <input type="email" id="email" name="email"  placeholder="E-mail" /> 
+                    <input type="email" 
+                    id="email" 
+                    name="email"  
+                    placeholder="E-mail"
+                    required="required" 
+                    pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$"/> 
                     <span id="missingEmail"></span>
                 </p>
                 
                 <p>
                     <label for="password-0">Mot de Passe :</label>
-                    <input type="password" id="password-0" name="password"  placeholder="password" />
+                    <input type="password" 
+                    id="password-0" 
+                    name="password"  
+                    placeholder="password"
+                    required="required"
+                    pattern=" ^[a-zA-Z0-9._-]{4,}+$" />
                     <span id="missingPassword"></span> 
                 </p>
                
                  <p>
                     <label for="password-1">Confirmer Mot de Passe :</label>
-                    <input type="password" id="password-1" name="password"  placeholder="password" /> 
+                    <input type="password" 
+                    id="password-1" 
+                    name="password"  
+                    placeholder="password"
+                    required="required" /> 
                     <span id="confirmationpassword"></span>
                 </p>
                 
@@ -60,24 +77,24 @@
     </form>
 </section>
 <footer>
-    <h3><a href="/Accueil">Animal Shop</a></h3>
+    <h3><a href="/">Animal Shop</a></h3>
 </footer>
 
 <script>
     var formValid = document.getElementById("bouton_envoi");
     
     var nom = document.getElementById("nom");
-    var nomValidation= /^[a-zA-Z ]+$/;
+    // var nomValidation= /^[a-zA-Z ]+$/;
     var missingNom = document.getElementById("missingNom");
     formValid.addEventListener("click",validationNom);
 
     var email = document.getElementById("email");
-    var emailValidation= /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+    // var emailValidation= /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
     var missingEmail = document.getElementById("missingEmail");
     formValid.addEventListener("click",validationEmail);
    
     var password = document.getElementById("password-0");
-    var passwordValidation=  /^[a-zA-Z0-9._-]{4,}+$/;
+    // var passwordValidation=  /^[a-zA-Z0-9._-]{4,}+$/;
     var missingPassword = document.getElementById("missingPassword");
     formValid.addEventListener("click",validationPassword);
     
@@ -96,15 +113,15 @@
             missingNom.Style.borderRadius='3px';
             missingNom.stye.fontSize= '25px';
             missingNom.style.fontWeight='700';
-        }else if(!nomValidation.test(nom.value)) {
-            event.preventDefault();
-            missingNom.textContent="Format incorrect";
-            missingNom.style.color="white";
-            missingNom.style.background='orange';
-            missingNom.style.padding='3px 80px';
-            missingNom.Style.borderRadius='3px';
-            missingNom.stye.fontSize= '25px';
-            missingNom.style.fontWeight='700';
+        // }else if(!nomValidation.test(nom.value)) {
+        //     event.preventDefault();
+        //     missingNom.textContent="Format incorrect";
+        //     missingNom.style.color="white";
+        //     missingNom.style.background='orange';
+        //     missingNom.style.padding='3px 80px';
+        //     missingNom.Style.borderRadius='3px';
+        //     missingNom.stye.fontSize= '25px';
+        //     missingNom.style.fontWeight='700';
         }else {
             missingNom.textContent='';
             missingNom.style='none';
@@ -120,16 +137,16 @@
             missingEmail.Style.borderRadius='3px';
             missingEmail.stye.fontSize= '30px';
             missingEmail.style.fontWeight='700';
-        }else if(!emailValidation.test(email.value)) {
-            event.preventDefault();
-            missingEmail.textContent="Email incorrect";
-            missingEmail.style.color="white";
-            missingEmail.style.background='orange';
-            missingEmail.style.padding='3px 80px';
-            missingEmail.Style.borderRadius='3px';
-            missingEmail.stye.fontSize= '30px';
-            missingEmail.style.fontWeight='700';
-        }else {
+        // }else if(!emailValidation.test(email.value)) {
+        //     event.preventDefault();
+        //     missingEmail.textContent="Email incorrect";
+        //     missingEmail.style.color="white";
+        //     missingEmail.style.background='orange';
+        //     missingEmail.style.padding='3px 80px';
+        //     missingEmail.Style.borderRadius='3px';
+        //     missingEmail.stye.fontSize= '30px';
+        //     missingEmail.style.fontWeight='700';
+        // }else {
             missingEmail.textContent='';
             missingEmail.style='none';
         }
@@ -144,16 +161,16 @@
             missingPassword.Style.borderRadius='3px';
             missingPassword.stye.fontSize= '30px';
             missingPassword.style.fontWeight='700';
-        }else if(!passwordValidation.test(password.value)) {
-            event.preventDefault();
-            missingPassword.textContent="Mot de passe incorrect";
-            missingPassword.style.color="white";
-            missingPassword.style.background='orange';
-            missingPassword.style.padding='3px 80px';
-            missingPassword.Style.borderRadius='3px';
-            missingPassword.stye.fontSize= '30px';
-            missingPassword.style.fontWeight='700';
-        }else {
+        // }else if(!passwordValidation.test(password.value)) {
+        //     event.preventDefault();
+        //     missingPassword.textContent="Mot de passe incorrect";
+        //     missingPassword.style.color="white";
+        //     missingPassword.style.background='orange';
+        //     missingPassword.style.padding='3px 80px';
+        //     missingPassword.Style.borderRadius='3px';
+        //     missingPassword.stye.fontSize= '30px';
+        //     missingPassword.style.fontWeight='700';
+        // }else {
             missingPassword.textContent='';
             missingPassword.style='none';
         }
