@@ -35,7 +35,7 @@ public class PageEspaceMembreServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// vérifier la présence d'une session
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		
 		// si il n'y a pas de session, on redirige vers la page de connexion
 		if (session == null || session.getAttribute(LoginPostName.EMAIL.getName()) == null) {
@@ -63,14 +63,13 @@ public class PageEspaceMembreServlet extends HttpServlet {
 		String newEmail="";
 		String newPassword = "";
 		
-		
-		System.out.println(username);
 		// Vérifier la présence de ces champs requis dans la requête
 		if (PostNamesChecker.areNamesFoundInPostRequest(request, requiredNames)) {
 			newEmail = request.getParameter(LoginPostName.EMAIL.getName());
 			newPassword = request.getParameter(LoginPostName.PASSWORD.getName());
 			// Opérer les modifications
-			DatabaseWebUser.update(username, newEmail, newPassword);
+			System.out.println(DatabaseWebUser.update(username, newEmail, newPassword));
+			System.out.println(username);
 			// Prévenir utilisateur que la modif a été faite
 			this.updateMessage = "La modification de vos informations a bien été faite. Hourra.";
 			request.setAttribute("updateMessage", this.updateMessage);
