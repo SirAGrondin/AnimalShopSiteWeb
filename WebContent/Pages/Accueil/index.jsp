@@ -8,7 +8,9 @@
 <title>Animal Shop</title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans"
 	rel="stylesheet">
-<link rel="stylesheet" href="Accueil.css">
+<style>
+<%@include file="styleAccueil.jsp" %>
+</style>
 </head>
 
 <body>
@@ -24,10 +26,10 @@
 		<div class="haut_droite">
 			<nav class="menu">
 				<ul>
-					<li><a href="#">Accueil</a></li>
+					<li><a href="/">Accueil</a></li>
 					<li><a href="#">Qui sommes-nous</a></li>
 					<li><a href="/AnimalShopSiteWeb/Connexion">Connexion</a></li>
-					<li><a href="#">Service</a></li>
+					<li><a href="/AnimalShopSiteWeb/Enregistrement">Enregistrement</a></li>
 					<li><a href="#">Listes d'animaux</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
