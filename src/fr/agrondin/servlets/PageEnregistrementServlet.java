@@ -43,7 +43,7 @@ public class PageEnregistrementServlet extends HttpServlet {
 					// Si une session existe, on redirige sur une autre page.
 				}
 				// Si non, on affiche la page de formulaire/connexion.
-				this.getServletContext().getRequestDispatcher("/Pages/Connexion/").forward(request, response);
+				this.getServletContext().getRequestDispatcher("/Pages/Enregistrement/").forward(request, response);
 			}
 
 			/**
@@ -67,22 +67,13 @@ public class PageEnregistrementServlet extends HttpServlet {
 					// Vérifier l'existance du potentiel utilisateur
 					WebUser user = DatabaseWebUser.selectByPseudoOrEmail(username);
 					if (user != null) {
-						// Vérifier son mot de passe
-						if (user.getPassword().equals(password)) {
-							HttpSession session = request.getSession();
-							session.setAttribute(LoginPostName.USERNAME.getName(), username);
-							session.setAttribute(LoginPostName.PASSWORD.getName(), password);
-							response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
-						} else {
-							this.loginErrorMessage = "Le mot de passe est incorrect.";
-							request.setAttribute("errorLogin", this.loginErrorMessage);
-							doGet(request, response);
-						}
-					} else {
-						this.loginErrorMessage = "Le pseudonyme ou l'adresse email est incorrect.";
+						// Afficher message d'erreur : pseudonyme déjà existant
+						this.loginErrorMessage ="Le pseudonyme ou l'email est déjà pris.";
 						request.setAttribute("errorLogin", this.loginErrorMessage);
-						doGet(request, response);
-					}
+
+						} else if (user == null){
+						DatabaseWebUser.register(username, email, password);
+						}
 				} else {
 					doGet(request, response);
 				}
