@@ -60,6 +60,15 @@
 					<input type="submit" value="Connexion" id="bouton_envoi" />
 				</p>
 			</fieldset>
+			
+			<!-- <fieldset class="register">
+				<a href="/AnimalShopSiteWeb/Enregistrement" role="button">S'enregistrer</a>
+			</fieldset> -->
+			
+			<fieldset>
+				<button><a href="/AnimalShopSiteWeb/Enregistrement">S'enregistrer</a></button>
+			</fieldset>
+			
 		</form>
 	</section>
 
