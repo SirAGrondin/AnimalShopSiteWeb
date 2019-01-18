@@ -1,3 +1,4 @@
+<%@page import="fr.agrondin.objects.LoginPostName"%>
 <%@page import="fr.agrondin.objects.DatabaseWebUser"%>
 <%@page import="fr.agrondin.objects.Role"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -49,7 +50,7 @@
 				Envoyer</label>
 		</fieldset>
 
-		<% if (Role.ADMIN.getId() == 1){ %>
+		<% if (session.getAttribute(LoginPostName.ROLE.getName()).toString().equals(Role.ADMIN.getName())){ %>
 		<fieldset>
 			<button>
 				<a href="/AnimalShopSiteWeb/Gestion">Gestion du stock</a>
