@@ -40,6 +40,12 @@
 							minlength="3" maxlength="250" title="Min/Max: 3/250 caractères."
 							placeholder="Votre mot de passe" required="required" tabindex="1">
 				</fieldset>
+				
+				 <!-- Rester connectÃ© -->
+                <fieldset>
+                    <input type="checkbox" name="connexion-persist" id="connexion-persist-0" class="Checkbox">
+                    <label for="connexion-persist-0">Se souvenir de moi</label>
+                </fieldset>
 
 
 				<!-- Message d'erreur -->

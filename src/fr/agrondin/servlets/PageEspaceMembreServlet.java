@@ -37,9 +37,14 @@ public class PageEspaceMembreServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		// si il n'y a pas de session, on redirige vers la page de connexion
-		if (session.getAttribute(LoginPostName.USERNAME.getName()) == null) {
-			this.getServletContext().getRequestDispatcher("/Pages/Connexion/").forward(request, response);
+		if (session.getAttribute(LoginPostName.EMAIL.getName()) == null) {
+			response.sendRedirect("/AnimalShopSiteWeb/Connexion");
 		}
+		
+		else {
+			this.getServletContext().getRequestDispatcher("/Pages/EspaceMembre/").forward(request, response);
+		}
+		
 			
 	}
 
