@@ -43,6 +43,7 @@ public class PageEnregistrementServlet extends HttpServlet {
 					// Si une session existe, on redirige sur une autre page.
 				}
 				// Si non, on affiche la page de formulaire/connexion.
+				request.setAttribute("errorLogin", this.loginErrorMessage);
 				this.getServletContext().getRequestDispatcher("/Pages/Enregistrement/").forward(request, response);
 			}
 
@@ -71,8 +72,9 @@ public class PageEnregistrementServlet extends HttpServlet {
 						this.loginErrorMessage ="Le pseudonyme ou l'email est déjà pris.";
 						request.setAttribute("errorLogin", this.loginErrorMessage);
 
-						} else if (user == null){
+						} else {
 						DatabaseWebUser.register(username, email, password);
+						response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
 						}
 				} else {
 					doGet(request, response);

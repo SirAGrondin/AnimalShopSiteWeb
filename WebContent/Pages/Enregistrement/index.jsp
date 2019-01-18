@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<style>
+<%@include file="styleEnregistrement.jsp" %>
+</style> 
 <title>Inscription</title>
 </head>
 
@@ -11,26 +14,21 @@
     <header class="top">
         <div class="titre">
             <h1>Page d'enregistrement</h1>
-            <h2>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula consequat libero id
-                posuere. Pellentesque id nisl viverra, laoreet leo eu, dapibus urna. 
-                Paesent ac magna et quam molestie dapibus ac quis risus.</br>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada
-                fames ac turpis egestas. </h2>
+
         </div>
     </header>
 <section class ="formulaire">
     <form>
         <div class="container-col">
             <fieldset>
-                    <p id="error"><%= request.getAttribute("errorlogin") %></p>
+                    
                 <p>
                     <label for="usernam-0">Pseudo :</label>
                     <input type="text" id="username-0" 
                     name="username"
                     placeholder="Pseudonyme"
-                    required="required"
-                    pattern="^[a-zA-Z ]+$" />
+                    pattern="^[a-zA-Z ]+$"
+                    required="required" />
                     <span id="missingNom"></span>
                 </p>
               
@@ -39,9 +37,9 @@
                     <input type="email" 
                     id="email" 
                     name="email"  
-                    placeholder="E-mail"
-                    required="required" 
-                    pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$"/> 
+                    placeholder="utilisateur@mail.com"
+                    pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$"
+                    required="required"/> 
                     <span id="missingEmail"></span>
                 </p>
                 
@@ -50,9 +48,9 @@
                     <input type="password" 
                     id="password-0" 
                     name="password"  
-                    placeholder="password"
-                    required="required"
-                    pattern=" ^[a-zA-Z0-9._-]{4,}+$" />
+                    placeholder="Mot de Passe (4 carac. min)"
+                    pattern=" ^[a-zA-Z0-9._-]{4,}+$" 
+                    required="required"/>
                     <span id="missingPassword"></span> 
                 </p>
                
@@ -61,23 +59,24 @@
                     <input type="password" 
                     id="password-1" 
                     name="password"  
-                    placeholder="password"
-                    required="required" /> 
+                    placeholder="Mot de Passe (4 carac. min)"
+                    required="required"
+                     /> 
                     <span id="confirmationpassword"></span>
                 </p>
-                
+                <p id="error"><%= request.getAttribute("errorlogin") %></p>
             </fieldset>
 
           
     <fieldset class ="submit">
-        <p>
-            <input type ="button" value="Inscription" id="bouton_envoi"/>
-        </p>
+        <label>
+            <button type ="submit" value="Inscription" id="bouton_envoi"/>Inscription
+        </label>
     </fieldset>
     </form>
 </section>
 <footer>
-    <h3><a href="/">Animal Shop</a></h3>
+    <h3><a href="/AnimalShopSiteWeb/">Animal Shop</a></h3>
 </footer>
 
 <script>
@@ -105,7 +104,6 @@
     function validationNom(event){
         event.preventDefault();
         if(nom.validity.valueMissing){
-            
             missingNom.textContent='Pseudonyme manquant';
             missingNom.style.color="white";
             missingNom.style.background='red';
