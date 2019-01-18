@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PageEspaceMembreServlet
  */
-@WebServlet("/PageEspaceMembreServlet")
+@WebServlet("/EspaceMembre")
 public class PageEspaceMembreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
