@@ -1,6 +1,7 @@
 package fr.agrondin.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.agrondin.objects.DatabaseWebUser;
+import fr.agrondin.objects.LoginPostName;
 import fr.agrondin.objects.PostNamesChecker;
 import fr.agrondin.objects.WebUser;
-import fr.agrondin.objects.LoginPostName;
 
 /**
  * Servlet implementation class PageConnexionServlet
@@ -50,7 +51,7 @@ public class PageConnexionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Préciser les champs requis envoyés par le formulaire.
-				String[] requiredNames = { LoginPostName.EMAIL.getName(), LoginPostName.PASSWORD.getName()};
+				String[] requiredNames = { LoginPostName.EMAIL.getName(), LoginPostName.PASSWORD.getName(), LoginPostName.STAYCO.getName()};
 
 				String email = "", password = "";
 
