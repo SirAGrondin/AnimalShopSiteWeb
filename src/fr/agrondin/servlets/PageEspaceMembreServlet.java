@@ -6,6 +6,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import fr.agrondin.objects.LoginPostName;
+import fr.agrondin.objects.DatabaseWebUser;
+import fr.agrondin.objects.PostNamesChecker;
+import fr.agrondin.objects.WebUser;
 
 /**
  * Servlet implementation class PageEspaceMembreServlet
@@ -26,16 +32,22 @@ public class PageEspaceMembreServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		// vérifier la présence d'une session
+		HttpSession session = request.getSession();
+		
+		// si il n'y a pas de session, on redirige vers la page de connexion
+		if (session.getAttribute(LoginPostName.USERNAME.getName()) == null) {
+			this.getServletContext().getRequestDispatcher("/Pages/Connexion/").forward(request, response);
+		}
+			
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
