@@ -67,6 +67,8 @@ public class PageEspaceMembreServlet extends HttpServlet {
 			newPassword = request.getParameter(LoginPostName.PASSWORD.getName());
 			// Opérer les modifications
 			DatabaseWebUser.update(username, newEmail, newPassword);
+			System.out.println(username);
+			response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
 			// Prévenir utilisateur que la modif a été faite
 			this.updateMessage = "La modification de vos informations a bien été faite. Hourra.";
 			request.setAttribute("updateMessage", this.updateMessage);
