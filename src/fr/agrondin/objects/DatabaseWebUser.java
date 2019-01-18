@@ -26,12 +26,11 @@ public final class DatabaseWebUser {
 		return false;
 	}
 	
-	public static final boolean update(final String pseudo, final String newEmail, final String newPassword) {
-		WebUser updated = new WebUser();
+	public static final boolean update(final String username, final String newEmail, final String newPassword) {
 		Iterator<WebUser> webUserIterator = accounts.iterator();
 		while(webUserIterator.hasNext()) {
 			WebUser user = webUserIterator.next();
-				if (user.getPseudo().equals(pseudo)) {
+				if (user.getPseudo().equals(username)) {
 					user.setEmail(newEmail);
 					user.setPassword(newPassword);
 					return true;

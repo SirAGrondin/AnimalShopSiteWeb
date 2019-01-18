@@ -19,65 +19,73 @@ import fr.agrondin.objects.WebUser;
 @WebServlet("/Enregistrement")
 public class PageEnregistrementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String loginErrorMessage=" ";
-
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PageEnregistrementServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private String loginErrorMessage = " ";
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public PageEnregistrementServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// Vérifier la présence d'une session.
-				HttpSession session = request.getSession();
-				if(session.getAttribute(LoginPostName.USERNAME.getName()) !=null) {
-					response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
-					return;
-					// Si une session existe, on redirige sur une autre page.
-				}
-				// Si non, on affiche la page de formulaire/connexion.
-				request.setAttribute("errorLogin", this.loginErrorMessage);
-				this.getServletContext().getRequestDispatcher("/Pages/Enregistrement/").forward(request, response);
-			}
-
-			/**
-			 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-			 */
-			
-			protected void doPost(HttpServletRequest request, HttpServletResponse response)
-					throws ServletException, IOException {
-				
-				// Préciser les champs requis envoyés par le formulaire
-				String[] requiredNames = { LoginPostName.USERNAME.getName(),LoginPostName.EMAIL.getName(),LoginPostName.PASSWORD.getName(),
-						LoginPostName.STAYCO.getName() };
-				String username = "",email="", password = "";
-
-				// Vérifier la présence de ces champs requis dans la requête
-				if (PostNamesChecker.areNamesFoundInPostRequest(request, requiredNames)) {
-					username = request.getParameter(LoginPostName.USERNAME.getName());
-					email = request.getParameter(LoginPostName.EMAIL.getName());
-					password = request.getParameter(LoginPostName.PASSWORD.getName());
-
-					// Vérifier l'existance du potentiel utilisateur
-					WebUser user = DatabaseWebUser.selectByPseudoOrEmail(username);
-					if (user != null) {
-						// Afficher message d'erreur : pseudonyme déjà existant
-						this.loginErrorMessage ="Le pseudonyme ou l'email est déjà pris.";
-						request.setAttribute("errorLogin", this.loginErrorMessage);
-
-						} else {
-						DatabaseWebUser.register(username, email, password);
-						response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
-						}
-				} else {
-					doGet(request, response);
-				}
-			}
+		HttpSession session = request.getSession();
+		if (session.getAttribute(LoginPostName.USERNAME.getName()) != null) {
+			response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
+			return;
+			// Si une session existe, on redirige sur une autre page.
 		}
+		// Si non, on affiche la page de formulaire/connexion.
+		request.setAttribute("errorLogin", this.loginErrorMessage);
+		this.getServletContext().getRequestDispatcher("/Pages/Enregistrement/").forward(request, response);
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// Préciser les champs requis envoyés par le formulaire
+		String[] requiredNames = { LoginPostName.USERNAME.getName(), LoginPostName.EMAIL.getName(),
+				LoginPostName.PASSWORD.getName(), LoginPostName.STAYCO.getName() };
+		String username = "", email = "", password = "", passwordbis = "";
+
+		// Vérifier la présence de ces champs requis dans la requête
+		if (PostNamesChecker.areNamesFoundInPostRequest(request, requiredNames)) {
+			username = request.getParameter(LoginPostName.USERNAME.getName());
+			email = request.getParameter(LoginPostName.EMAIL.getName());
+			password = request.getParameter(LoginPostName.PASSWORD.getName());
+			passwordbis = request.getParameter(LoginPostName.PASSWORDBIS.getName());
+
+			// Vérifier l'existance du potentiel utilisateur
+			WebUser user = DatabaseWebUser.selectByPseudoOrEmail(username);
+			if (user != null) {
+				// Afficher message d'erreur : pseudonyme déjà existant
+				this.loginErrorMessage = "Le pseudonyme ou l'email est déjà pris.";
+				request.setAttribute("errorLogin", this.loginErrorMessage);
+			} else if (!(password.equals(passwordbis))) {
+				this.loginErrorMessage = "Le mot de passe n'est pas identique.";
+				request.setAttribute("errorLogin", this.loginErrorMessage);
+			} else {
+				DatabaseWebUser.register(username, email, password);
+				this.getServletContext().getRequestDispatcher("/Pages/EspaceMembre/").forward(request, response);
+			}
+			request.setAttribute("errorLogin", this.loginErrorMessage);
+			doGet(request, response);
+		} else {
+			doGet(request, response);
+		}
+	}
+}

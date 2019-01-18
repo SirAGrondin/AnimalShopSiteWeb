@@ -9,10 +9,10 @@
 <title>EspaceMembre</title>
 </head>
 <body>
-	<h1>Il est des nôtres, il a bu son verre comme les autres !</h1>
+	<h1>Il est des nï¿½tres, il a bu son verre comme les autres !</h1>
 
 	<!-- <a href="/AnimalShopSiteWeb/Gestion">Gestion</a> -->
-	<a href="/AnimalShopSiteWeb/Deconnexion">Déconnexion</a>
+	<a href="/AnimalShopSiteWeb/Deconnexion">Dï¿½connexion</a>
 
 	<h2>Changer mes informations</h2>
 
