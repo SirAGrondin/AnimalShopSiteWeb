@@ -14,7 +14,7 @@
 
                 <h2>Changer mes informations</h2>
 
-                <form method="POST" action="Changer_information">
+                <form method="POST" action="EspaceMembre">
 
                     <!-- Nom d'utilisateur -->
                     <fieldset>
