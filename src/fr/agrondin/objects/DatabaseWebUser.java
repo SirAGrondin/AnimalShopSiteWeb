@@ -7,7 +7,8 @@ import java.util.Iterator;
 public final class DatabaseWebUser {
 
 	private static ArrayList<WebUser> accounts = new ArrayList<WebUser>(
-			Arrays.asList(new WebUser("Admin", "admin@localhost.fr", "Administrator", Role.ADMIN)));
+
+			Arrays.asList(new WebUser("Administrateur", "admin@localhost.fr", "Admdp", Role.ADMIN)));
 
 	public static final boolean register(final String pseudo, final String email, final String password) {
 		

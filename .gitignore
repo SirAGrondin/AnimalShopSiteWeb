@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+/build/
+=======
 build/
 ./build/
 *.class
+>>>>>>> 4ddf73b14e54c4091708e8ff85a144aac72667f2
