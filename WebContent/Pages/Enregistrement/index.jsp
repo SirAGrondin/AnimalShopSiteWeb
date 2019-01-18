@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<!-- <style>
+<style>
 <%@include file="styleEnregistrement.jsp" %>
-</style>  -->
+</style>
 <title>Inscription</title>
 </head>
 
