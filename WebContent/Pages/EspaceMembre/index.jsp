@@ -1,3 +1,4 @@
+<%@page import="fr.agrondin.objects.LoginPostName"%>
 <%@page import="fr.agrondin.objects.DatabaseWebUser"%>
 <%@page import="fr.agrondin.objects.Role"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -18,18 +19,10 @@
 
 	<form method="POST" action="/AnimalShopSiteWeb/EspaceMembre">
 
-		<!-- Nom d'utilisateur -->
-		<fieldset>
-			<label for="username-0">Nom d'utilisateur</label> <input type="text"
-				name="username" class="user" id="username-0" minlength="3"
-				maxlength="30" pattern="^[A-Z][a-z ]{2,29}$"
-				title="Nom d'utilisateur" placeholder="Nom d'utilisateur"
-				required="required" tabindex="1" autofocus="autofocus">
-		</fieldset>
-
 		<!-- Email -->
 		<fieldset>
-			<label for="email-0">Nouvel Email</label> <input type="email"
+				<%= session.getAttribute(LoginPostName.EMAIL.getName()) %>
+				<label for="email-0">Nouvel Email</label> <input type="email"
 				name="email" class="email" id="email-0" title="E-mail"
 				placeholder="Nouvel E-mail" required="required" tabindex="1"
 				autofocus="autofocus">
@@ -37,6 +30,7 @@
 
 		<!-- Mot de passe -->
 		<fieldset>
+			<%= session.getAttribute(LoginPostName.PASSWORD.getName()) %>
 			<label for="password-0">Nouveau mot de passe</label> <input
 				type="password" name="password" class="password" id="password-0"
 				minlength="8" maxlength="250" title="Mot de passe"
