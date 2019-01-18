@@ -21,26 +21,32 @@
 	</header>
 
 	<section class="formulaire">
-		<form method="post" action="envoi.php">
+		<form method="post" action="/AnimalShopSiteWeb/Connexion">
 
 			<div class="container-col">
+			
+			    <!-- Email d'identification -->
 				<fieldset>
-					<p>
 						<label for="email">E-mail :</label> <input type="email"
 							id="email-0" name="email" class="Email"
 							placeholder="Votre adresse e-mail" required="required"
 							tabindex="1" autofocus="autofocus" />
-						<!-- <span id="missingEmail"></span> -->
-					</p>
-
-					<p>
+				</fieldset>
+				
+				<!-- Mot de passe -->
+				<fieldset>
 						<label for="password-0">Mot de passe :</label> <input
 							type="password" name="password" id="password-0" class="Password"
 							minlength="3" maxlength="250" title="Min/Max: 3/250 caractères."
 							placeholder="Votre mot de passe" required="required" tabindex="1">
-						<!-- <span id="missingNom"></span> -->
-					</p>
 				</fieldset>
+
+
+				<!-- Message d'erreur -->
+				<fieldset>
+					<p><%= request.getAttribute("errorLogin") %></p>
+				</fieldset>
+
 			</div>
 
 			<fieldset class="submit">

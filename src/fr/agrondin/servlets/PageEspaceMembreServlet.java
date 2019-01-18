@@ -19,6 +19,7 @@ import fr.agrondin.objects.WebUser;
 @WebServlet("/EspaceMembre")
 public class PageEspaceMembreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String updateMessage = "";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -47,6 +48,26 @@ public class PageEspaceMembreServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// Récupérer la session
+		HttpSession session = request.getSession();
+		
+		// Préciser les champs requis envoyés par le formulaire
+		String[] requiredNames = { LoginPostName.EMAIL.getName(),LoginPostName.PASSWORD.getName() };
+		String username = (String) session.getAttribute(LoginPostName.USERNAME.getName()), newEmail="", newPassword = "";
+		
+		// Vérifier la présence de ces champs requis dans la requête
+		if (PostNamesChecker.areNamesFoundInPostRequest(request, requiredNames)) {
+			newEmail = request.getParameter(LoginPostName.EMAIL.getName());
+			newPassword = request.getParameter(LoginPostName.PASSWORD.getName());
+			// Opérer les modifications
+			DatabaseWebUser.update(username, newEmail, newPassword);
+			// Prévenir utilisateur que la modif a été faite
+			this.updateMessage = "La modification de vos informations a bien été faite. Hourra.";
+			request.setAttribute("updateMessage", this.updateMessage);
+			doGet(request, response);		
+		}
+
 		
 	}
 
