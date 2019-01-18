@@ -68,10 +68,14 @@ public class PageEspaceMembreServlet extends HttpServlet {
 			newEmail = request.getParameter(LoginPostName.EMAIL.getName());
 			newPassword = request.getParameter(LoginPostName.PASSWORD.getName());
 			// Opérer les modifications
-			DatabaseWebUser.update(username, newEmail, newPassword);
+			if (DatabaseWebUser.update(username, newEmail, newPassword)) {
 			// Prévenir utilisateur que la modif a été faite
-			this.updateMessage = "La modification de vos informations a bien été faite. Hourra.";
+			this.updateMessage = "La modification de vos informations a bien été faite.";
 			request.setAttribute("updateMessage", this.updateMessage);
+			} else {
+				this.updateMessage = "La modification n'a pas été faite.";
+				request.setAttribute("updateMessage", this.updateMessage);
+			}
 //			response.sendRedirect("/AnimalShopSiteWeb/EspaceMembre");
 			doGet(request, response);		
 		}

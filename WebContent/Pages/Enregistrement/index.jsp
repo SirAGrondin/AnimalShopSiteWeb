@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <style>
-<%@include file="styleEnregistrement.jsp" %>
+<%@ include file="styleEnregistrement.jsp"%>
 </style>
 <title>Inscription</title>
 </head>
@@ -18,39 +18,39 @@
 		</div>
 	</header>
 	<section class="formulaire">
-		<form method= "POST" action ="Enregistrement">
+		<form method="POST" action="Enregistrement">
 			<div class="container-col">
 				<fieldset>
 
 					<p>
 						<label for="usernam-0">Pseudo :</label> <input type="text"
 							id="username-0" name="username" placeholder="Pseudonyme"
-							pattern="^[A-Z][a-zA-Z]+$" required="required" /> <span
-							id="missingNom"></span>
+							pattern="^[A-Z][a-zA-Z]+$" required="required" tabindex="1"
+							autofocus="autofocus" /> <span id="missingNom"></span>
 					</p>
 
 					<p>
 						<label for="email">E-mail :</label> <input type="email" id="email"
 							name="email" placeholder="utilisateur@mail.com"
 							pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$"
-							required="required" /> <span id="missingEmail"></span>
+							required="required" tabindex="1" /> <span id="missingEmail"></span>
 					</p>
 
 					<p>
 						<label for="password-0">Mot de Passe :</label> <input
 							type="password" id="password-0" name="password"
 							placeholder="Mot de Passe (4 carac. min)"
-							pattern=" ^[a-zA-Z0-9._-]{4,}+$" required="required" /> <span
-							id="missingPassword"></span>
+							pattern=" ^[a-zA-Z0-9._-]{4,}+$" required="required" tabindex="1" />
+						<span id="missingPassword"></span>
 					</p>
 
 					<p>
 						<label for="password-1">Confirmer Mot de Passe :</label> <input
 							type="password" id="password-1" name="passwordbis"
-							placeholder="Mot de Passe (4 carac. min)" required="required" />
-						<span id="confirmationpassword"></span>
+							placeholder="Mot de Passe (4 carac. min)" required="required"
+							tabindex="1" /> <span id="confirmationpassword"></span>
 					</p>
-					<p id="error"><%= request.getAttribute("errorLogin") %></p>
+					<p id="error"><%=request.getAttribute("errorLogin")%></p>
 				</fieldset>
 
 

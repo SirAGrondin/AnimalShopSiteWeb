@@ -21,23 +21,26 @@
 
 		<!-- Nom d'utilisateur -->
 		<fieldset>
-		<p>Votre nom d'utilisateur : <%= session.getAttribute(LoginPostName.USERNAME.getName()) %></p>
-		</fieldset>
-		
-		<!-- Email -->
-		<fieldset>
-				<label for="email-0">Nouvel Email</label> <input type="email"
-				name="email" class="email" id="email-0" title="E-mail"
-				placeholder="Nouvel E-mail" required="required" tabindex="1"
-				autofocus="autofocus">
-		</fieldset>
+			<p>
+				Votre nom d'utilisateur :
+				<%=session.getAttribute(LoginPostName.USERNAME.getName())%></p>
 
-		<!-- Mot de passe -->
-		<fieldset>
-			<label for="password-0">Nouveau mot de passe</label> <input
-				type="text" name="password" class="password" id="password-0"
-				minlength="8" maxlength="250" title="Mot de passe"
-				placeholder="Nouveau mot de passe" required="required" tabindex="1">
+
+			<p>
+				<label for="email">E-mail :</label> <input type="email" id="email"
+					name="email" placeholder="utilisateur@mail.com"
+					pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$"
+					required="required" tabindex="1" />
+			</p>
+
+			<p>
+				<label for="password-0">Mot de Passe :</label> <input
+					type="password" id="password-0" name="password"
+					placeholder="Mot de Passe (4 carac. min)"
+					pattern=" ^[a-zA-Z0-9._-]{4,}+$" required="required" tabindex="1" />
+			</p>
+			
+			<p> <%= request.getAttribute("updateMessage") %></p>
 		</fieldset>
 
 		<!-- Changer les informations -->
@@ -46,13 +49,17 @@
 				Envoyer</label>
 		</fieldset>
 
-		<% if (session.getAttribute(LoginPostName.ROLE.getName()).toString().equals(Role.ADMIN.getName())){ %>
+		<%
+			if (session.getAttribute(LoginPostName.ROLE.getName()).toString().equals(Role.ADMIN.getName())) {
+		%>
 		<fieldset>
 			<button>
 				<a href="/AnimalShopSiteWeb/Gestion">Gestion du stock</a>
 			</button>
 		</fieldset>
-		<%}%>
+		<%
+			}
+		%>
 
 
 
