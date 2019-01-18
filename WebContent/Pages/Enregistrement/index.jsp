@@ -25,7 +25,7 @@
 					<p>
 						<label for="usernam-0">Pseudo :</label> <input type="text"
 							id="username-0" name="username" placeholder="Pseudonyme"
-							pattern="^[a-zA-Z ]+$" required="required" /> <span
+							pattern="^[A-Z][a-zA-Z]+$" required="required" /> <span
 							id="missingNom"></span>
 					</p>
 

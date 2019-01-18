@@ -80,7 +80,7 @@ public class PageEnregistrementServlet extends HttpServlet {
 				request.setAttribute("errorLogin", this.loginErrorMessage);
 			} else {
 				DatabaseWebUser.register(username, email, password);
-				this.getServletContext().getRequestDispatcher("/Pages/EspaceMembre/").forward(request, response);
+				this.getServletContext().getRequestDispatcher("/Pages/Connexion/").forward(request, response);
 			}
 			request.setAttribute("errorLogin", this.loginErrorMessage);
 			doGet(request, response);
